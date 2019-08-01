@@ -1,0 +1,136 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+	<script type="text/javascript" src="script.js"></script>
+	<link href="style.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+	<div id="table">
+		<div id="inclined">
+		<span class="covers" id="cover1" onclick="rotate1(),setTimeout(carte, 1500);"></span>
+		<span class="covers" id="cover2" onclick="rotate2(),setTimeout(notebook, 1500);"></span>
+		</div>
+		<span id="book_open">
+			<span class="book_cover" >
+					
+				<figure class="front">
+				</figure>
+				<figure class="back">
+				</figure>
+			</span>
+			<span>
+				<div class="teoriecontent" id="c0">
+					<img src="imaget/alcani-1.png">
+					<button class="fold" onclick='n()'>&rarr;</button>
+					</div>
+					
+					<div class="teoriecontent" id="c1">
+						<img src="imaget/alcani-2.png">
+					<button class="foldback" onclick='b1()'>&larr;</button>
+					<button class="fold" onclick='n1()'>&rarr;</button>
+					</div>
+					
+					<div class="teoriecontent" id="c2">
+						<img src="imaget/alcani-3.png">
+					<button class="foldback" onclick='b2()'>&larr;</button>
+					<button class="fold" onclick='n2()'>&rarr;</button>
+					</div>
+					<div class="teoriecontent" id="c3">
+						<img src="imaget/alchene-1.png">
+					<button class="foldback" onclick='b3()'>&larr;</button>
+					<button class="fold" onclick='n3()'>&rarr;</button>
+					</div>
+					<div class="teoriecontent" id="c4">
+						<img src="imaget/alchene-2.png">
+					<button class="foldback" onclick='b4()'>&larr;</button>
+					<button class="fold" onclick='n4()'>&rarr;</button>
+					</div>
+					<div class="teoriecontent" id="c5">
+						<img src="imaget/alchene-3.png">
+					<button class="foldback" onclick='b5()'>&larr;</button>
+					<button class="fold" onclick='n5()'>&rarr;</button>
+					</div>
+					<div class="teoriecontent" id="c6">
+						<img src="imaget/alchene-4.png">
+					<button class="foldback" onclick='b6()'>&larr;</button>
+					<button class="fold" onclick='n6()'>&rarr;</button>
+					</div>
+					<div class="teoriecontent" id="c7">
+						<img src="imaget/alchine-1.png">
+					<button class="foldback" onclick='b7()'>&larr;</button>
+					<button class="fold" onclick='n7()'>&rarr;</button>
+					</div>
+					<div class="teoriecontent" id="c8">
+						<img src="imaget/alchine-2.png">
+					<button class="foldback" onclick='b8()'>&larr;</button>
+					<button class="fold" onclick='n8()'>&rarr;</button>
+					</div>
+					<div class="teoriecontent" id="c9">
+						<img src="imaget/alchine-3.png">
+					<button class="foldback" onclick='b9()'>&larr;</button>
+					<button class="fold" onclick='n9()'>&rarr;</button>
+					</div>
+					<div class="teoriecontent" id="c10">
+						<img src="imaget/hidrocarburi-aromatice-1.png">
+					<button class="foldback" onclick='b10()'>&larr;</button>
+					<button class="fold" onclick='n10()'>&rarr;</button>
+					</div>
+					<div class="teoriecontent" id="c11">
+						<img src="imaget/hidrocarburi-aromatice-2.png">
+					<button class="foldback" onclick='b11()'>&larr;</button>
+					<button class="fold" onclick='n11()'>&rarr;</button>
+					</div>
+					<div class="teoriecontent" id="c12">
+						<img src="imaget/hidrocarburi-aromatice-3.png">
+					<button class="foldback" onclick='b12()'>&larr;</button>
+					</div>	
+			</span>
+		</span>
+		<span id="notebook_open">
+			<span class="notebook_cover" >
+				<figure class="front2">
+				</figure>
+				<figure class="back2">
+				</figure>
+			</span>
+			<span id="chapters">
+				<button class="ch" onclick="deschide('alcani')">Alcani</button>
+				<button class="ch" onclick="deschide('alchene')">Alchene</button>
+				<button class="ch" onclick="deschide('alchine')">Alchine</button>
+				<button class="ch" onclick="deschide('arene')">Arene</button>
+			</span>
+		</span>
+		<!---------------------------------------------------------------------------->
+		<button id="back" onclick="back1()">
+			<span>BACK</span>
+		</button>
+		<button id="back2" onclick="back2()">
+			<span>BACK</span>
+		</button>
+		<div id="container">
+			<div id="start">Start Quiz!</div>
+			<div id="quiz" style="display: none">
+				<div id="question"></div>
+				<div id="qImg"></div>
+				<div id="choices">
+					<div class="choice" id="A" onclick="checkAnswer('A')"></div>
+					<br>
+					<div class="choice" id="B" onclick="checkAnswer('B')"></div>
+					<br>
+					<div class="choice" id="C" onclick="checkAnswer('C')"></div>
+					<br>
+					<div class="choice" id="D" onclick="checkAnswer('D')"></div>
+					<br>
+					<div class="choice" id="E" onclick="checkAnswer('E')"></div>
+				</div>
+				<div id="timer">
+					<div id="counter"></div>
+					<div id="btimeGauge"></div>
+					<div id="timeGauge"></div>
+				</div>
+				<div id="progress"></div>
+			</div>
+			<div id="scoreContainer" style="display: none"></div>
+	</div>
+</body>
+<html>

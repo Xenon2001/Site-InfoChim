@@ -1,0 +1,561 @@
+/*------------- PARALAX ---------------*/
+body
+{
+	margin:0;
+	padding:0;
+	background-image:url("image/bg1.png");
+	min-width: 100vw;
+	min-height: 100vh;
+	background-repeat:no-repeat;
+}
+
+/*------------- MAIN CONTENT ---------------*/
+.teoriecontent
+{
+	position:absolute;
+	left:9%;
+	top:2%;
+	display:none;
+	width:87%;
+	height:85%;
+	background-color:transparent;
+	color:black;
+}
+#c0
+{
+	display:block;
+}
+#inclined
+{
+	perspective:5000px;
+}
+span.covers
+{
+	position:relative;
+	display:block;
+	margin-top:5%;
+	margin-bottom:5%;
+	left:50%;
+	font-size: 5vw;
+}
+.rotateBack
+{
+	animation-duration:1.5s;
+	animation-name: rb;
+}
+.rotateBack2
+{
+	animation-duration:1.5s;
+	animation-name: rb;
+	animation-direction: reverse;
+}
+@-webkit-keyframes rb 
+{
+	from 
+	{
+		transform:translate(-50%,10%) rotateX(50deg);
+	}
+
+	to 
+	{
+		transform:translate(-50%,10%) rotateX(0deg);
+	}
+}
+@keyframes rb 
+{
+	from 
+	{
+		transform:translate(-50%,10%) rotateX(50deg);
+	}
+
+	to 
+	{
+		transform:translate(-50%,10%) rotateX(0deg);
+	}
+}
+
+.covers2
+{
+	display: none;
+}
+
+#cover1
+{
+	background-image:url("image/book.png");
+	width:600px;
+	height:685px;
+	background-repeat: no-repeat;
+	transform:translate(-50%,10%) rotateX(50deg);
+	pointer-events: auto; 
+}
+
+#cover2
+{
+	background-image:url("image/notepad.png");
+	height:auto;
+	width:600px;
+	height:685px;
+	background-repeat: no-repeat;
+	transform:translate(-50%,10%) rotateX(50deg);
+	transform-style: preserve-3d;
+}
+/*------------- button ---------------*/
+#back 
+{
+	position: absolute;
+	margin-top: 1vh;
+	margin-left: 1vw;
+	border-radius: 4px;
+	background-color: transparent;
+	border: none;
+	color: black;
+	text-align: center;
+	font-size: 3vw;
+	padding: 20px;
+	cursor: pointer;
+	display: none;
+	outline:none;
+}
+#back span 
+{
+	cursor: pointer;
+	display: inline-block;
+	position: relative;
+	transition: 0.5s;
+}
+
+#back span:after 
+{
+	content: '\00ab';
+	position: absolute;
+	opacity: 0;
+	top: 0;
+	font-size: 3vw;
+	left: -2vw;
+	transition: 0.5s;
+}
+
+#back:hover span 
+{
+	padding-left: 2vw;
+	color: white;
+	text-shadow: 0px 0px 40px hsl(217, 97%, 65%);
+}
+
+#back:hover span:after 
+{
+	opacity: 1;
+	left: 0;
+	color: white;
+	text-shadow: 2px 2px 4px black, 0 0 50px red;
+}
+
+#back2 
+{
+	position: absolute;
+	margin-top: 1vh;
+	margin-left: 1vw;
+	border-radius: 4px;
+	background-color: transparent;
+	border: none;
+	color: black;
+	text-align: center;
+	font-size: 3vw;
+	padding: 20px;
+	cursor: pointer;
+	display: none;
+	outline:none;
+}
+#back2 span 
+{
+	cursor: pointer;
+	display: inline-block;
+	position: relative;
+	transition: 0.5s;
+}
+
+#back2 span:after 
+{
+	content: '\00ab';
+	position: absolute;
+	opacity: 0;
+	top: 0;
+	font-size: 3vw;
+	left: -2vw;
+	transition: 0.5s;
+}
+
+#back2:hover span 
+{
+	padding-left: 2vw;
+	color: white;
+	text-shadow: 0px 0px 40px hsl(217, 97%, 65%);
+}
+
+#back2:hover span:after 
+{
+	opacity: 1;
+	left: 0;
+	color: white;
+	text-shadow: 2px 2px 4px black, 0 0 50px red;
+}
+/*------------- book_open ---------------*/
+#book_open
+{
+    display: none;
+    width:600px;
+	height:685px;
+	background-image:url("image/content.png");
+	position: absolute;
+	left:50%;
+	top:50%;
+	transform:translate(-50%,-50%);
+	perspective: 5000px;
+	display:none;
+}
+
+.book_cover
+{
+	width:550px;
+	margin-left:50px;
+	height:595px;
+	position: absolute;
+	background-color: rgb(18,9,10);
+	transform: rotateY(0deg);
+	transform-style: preserve-3d;
+	transform-origin: left;
+	transition: all .9s ease-in;
+	z-index:999;
+}
+#book_open:hover .book_cover
+{
+	transform: rotateY(-180deg);
+}
+
+.book_cover figure
+{
+	margin: 0;
+	display: block;
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	backface-visibility: hidden;
+}
+.book_cover figure.front
+{
+	background: transparent;
+}
+.book_cover figure.back
+{
+	background-image: url("image/cover.png");
+}
+#book_open span p a
+{
+    text-overflow: none;
+    text-decoration: none;
+    color: red;
+	font-size: 3vw;
+	margin-left:10%;
+}
+/*------------- notebook_open ---------------*/
+#notebook_open
+{
+    width:562px;
+	height:685px;
+	background-image:url("image/notepad-in.png");
+	position: absolute;
+	left:50%;
+	top:50%;
+	transform:translate(-50%,-50%);
+	margin-bottom:10%;
+	perspective: 5000px;
+	font-size:3vw;
+	display:none;
+}
+.notebook_cover
+{
+    width:562px;
+	height:685px;
+	position: absolute;
+	transform: rotateX(15deg);
+	transform-style: preserve-3d;
+	transform-origin: top;
+	transition: all .9s ease-in;
+} 
+#notebook_open:hover .notebook_cover
+{
+	transform: rotateX(266.08deg) translateY(-80px);
+}
+
+#notebook_open figure
+{
+  	margin: 0;
+	display: block;
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	backface-visibility:hidden;
+}
+#notebook_open figure.front2
+{
+	background-image:url("image/notepad-cover.png");
+}
+#notebook_open figure.back2
+{
+	background-image:url("image/notepad-cover.png");
+	transform: rotateY(180deg);
+}
+/***************************************************/
+.fold
+{
+	background:white;
+	display:block;
+	position: absolute;
+	right:0;
+	bottom:0;
+	width:10%;
+	height:10%;
+	font-size:30px;
+	outline:none;
+	border: none;
+}
+.fold::before
+{
+	content: "";
+	transition: border-width 0.5s ease-in-out;
+	border-style: solid;
+	border-color: #d5d9db white;
+	position: absolute;
+	bottom: 0;
+	right: 0;
+	border-width: 0;
+	outline:none;
+}
+.fold:hover::before
+{
+	box-shadow: -1px -1px 1px rgba(156, 156, 156, 0.3);
+	border-width: 80px 80px 0 0;
+	border-radius: 0;
+	outline:none;
+}
+.fold:active::before
+{
+	box-shadow: -1px -1px 1px rgba(156, 156, 156, 0.3);
+	border-width: 80px 80px 0 0;
+	border-radius: 0;
+	outline:none;
+}
+.fold:focus::before
+{
+	box-shadow: -1px -1px 1px rgba(156, 156, 156, 0.3);
+	border-width: 80px 80px 0 0;
+	border-radius: 0;
+	outline:none;
+}
+.foldback
+{
+	display:block;
+	position: absolute;
+	left:0;
+	bottom:0;
+	width:10%;
+	height:10%;
+	font-size:30px;
+	outline:none;
+	border: none;
+	background-color:transparent;
+}
+#container{
+	display: none;
+	position: relative;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%,+50%);
+	background-color: #5a017ed0;
+	color: aliceblue;
+	height: 50vh;
+	width : 50vw;
+	padding: 0;
+	border-radius: 5px;
+	box-shadow: 0px 5px 15px 0px;
+	position: relative;
+}
+#start
+{
+	font-size: 1.5em;
+	font-weight: bolder;
+	word-break: break-all;
+	padding: 20px 15px;
+	left:50%;
+	top:50%;
+	transform: translate(-50%,-50%);
+	border : 2px solid lightgrey;
+	text-align: center;
+	cursor: pointer;
+	position: absolute;
+	background-color: rgb(183, 29, 255);
+	color : lightgrey;
+}
+#start:hover
+{
+	border: 3px solid #530075;
+	color : #530075;
+}
+
+#qImg
+{
+	width : 200px;
+	height : 200px;
+	position: absolute;
+	left : 0px;
+	top : 0px;
+}
+#qImg img
+{
+	width : 200px;
+	height : 200px;
+}
+
+#question
+{
+	width:auto;
+	height : 200px;
+	position: absolute;
+	left:205px;
+	right:0;
+	top:0;
+}
+#question p
+{
+	margin : 0;
+	padding : 15px;
+	font-size: 2em;
+}
+
+#choices
+{
+	width : 45vw;
+	margin-left: 2.5vw;
+	background-color: transparent;
+	position: absolute;
+	top : 210px;
+	padding : 10px
+}
+.choice
+{
+	background-color: rgb(204 ,75, 254);
+	display: inline-block;
+	text-align: center;
+	border : 1px solid white;
+	border-radius: 20px;
+	cursor: pointer;
+	width: 45vw;
+	margin: 0.5vh auto;
+	padding : 5px;
+}
+.choice:hover
+{
+	border : 2px solid white;
+	font-weight: bold;
+}
+#timer
+{
+	position: absolute;
+	height : 100px;
+	width : 200px;
+	bottom : 0px;
+	text-align: center;
+}
+#counter
+{
+	font-size: 3em;
+}
+#btimeGauge
+{
+	width : 150px;
+	height : 10px;
+	border-radius: 10px;
+	background-color: lightgray;
+	margin-left : 25px;
+}
+#timeGauge
+{
+	height : 10px;
+	border-radius: 10px;
+	background-color: mediumseagreen;
+	margin-top : -10px;
+	margin-left : 25px;
+}
+#progress
+{
+	width : 500px;
+	position: absolute;
+	bottom : 0px;
+	right : 0px;
+	padding:5px;
+	text-align: right;
+}
+.prog
+{
+	width : 25px;
+	height : 25px;
+	border: 1px solid #000;
+	display: inline-block;
+	border-radius: 50%;
+	margin-left : 5px;
+	margin-right : 5px;
+}
+#scoreContainer
+{
+	margin : 20px auto;
+	background-color: white;
+	height: 50vh;
+	width : 50vw;
+	border-radius: 5px;
+	box-shadow: 0px 5px 15px 0px;
+	position: relative;
+	display: none;
+}
+#scoreContainer img
+{
+	position: absolute;
+	top:100px;
+	left:325px;
+}
+#scoreContainer p
+{
+	position: absolute;
+	display: block;
+	margin:0;
+	top:50%;
+	left:50%;
+	transform: translate(-50%,-50%);
+	color: #000;
+	font-size: 5em;
+	font-weight: bold;
+	text-align: center;
+}
+.ch
+{
+	background-color: purple;
+	width:50%;
+	border-radius: 15px; 
+	padding: 2% 0;
+	text-align: center;
+	margin: 7% 25%;
+	font-size:70%;
+}
+#chapters
+{
+	padding-top: 12%; 
+	width: 100%;
+	height: 100%;
+	display: block; 
+}
+img
+{
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	top:0;
+}
